@@ -1,6 +1,6 @@
 package repository;
 import model.*;
-import repository.crudrepository.*;
+import repository.crud.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
