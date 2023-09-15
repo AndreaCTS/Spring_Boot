@@ -4,10 +4,22 @@
  */
 package repository;
 
+import com.example.demo.Departamento;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
 /**
  *
  * @author USUARIO
  */
+@Repository
 public class DepartamentoRepository {
+    @Autowired
+    private DepartamentoCrudRepository departamentoCrudRepository;
+    
+    public List<Departamento> getAll(){
+        return (List<Departamento>) departamentoCrudRepository.findAll();
+    }
     
 }

@@ -4,10 +4,11 @@
  */
 package repository;
 
+import org.springframework.data.repository.CrudRepository;
 /**
  *
  * @author USUARIO
  */
-public class DepartamentoCrudRepository {
+public interface DepartamentoCrudRepository CrudRepository<Departamento, Integer>{
     
 }
