@@ -1,14 +1,12 @@
 package model;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-//import javax.persistence.Column;
-//import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -16,10 +14,14 @@ import java.io.Serializable;
 public class Salario implements Serializable {
 
 	
-	private int salario_base;   
-    private int comision;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	
+	private float salario_base;   
+    private float comision;
 
-	public int getSalario_base() {
+	public float getSalario_base() {
 		return salario_base;
 	}
 
@@ -27,13 +29,22 @@ public class Salario implements Serializable {
 		this.salario_base = salario_base;
 	}
 
-	public int getComision() {
+	public float getComision() {
 		return comision;
 	}
 
 	public void setComision(int comision) {
 		this.comision = comision;
 	}
-    
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	
  
 }

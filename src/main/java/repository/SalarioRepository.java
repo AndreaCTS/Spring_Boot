@@ -10,7 +10,7 @@ import model.Salario;
 @Repository
 public class SalarioRepository {
 	@Autowired
-    private	SalarioCRUDRepository SalarioCRUDRepository;
+    private	repository.crud.SalarioCRUDRepository SalarioCRUDRepository;
 
 
     public List<Salario> getAll(){
