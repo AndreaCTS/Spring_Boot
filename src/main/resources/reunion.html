@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Reuniones</title>
+</head>
+<body>
+    <h1>Lista de Reuniones</h1>
+    
+    <!-- Div para agregar una nueva reunión -->
+    <div id="reunionForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" required>
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacion" placeholder="Ubicación" required>
+        <button onclick="agregarReunion()">Agregar Reunión</button>
+    </div>
+    
+    <!-- Tabla para mostrar las reuniones -->
+    <table id="tablaReuniones">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Fecha</th>
+                <th>Ubicación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se agregarán las filas de reuniones dinámicamente -->
+        </tbody>
+    </table>
+    
+    <script>
+        // Función para agregar una nueva reunión a la tabla
+        function agregarReunion() {
+            const nombre = document.getElementById("nombre").value;
+            const fecha = document.getElementById("fecha").value;
+            const ubicacion = document.getElementById("ubicacion").value;
+            
+            // Validar que los campos no estén vacíos
+            if (!nombre || !fecha || !ubicacion) {
+                alert("Todos los campos son obligatorios.");
+                return;
+            }
+            
+            // Crear una nueva fila en la tabla
+            const tabla = document.getElementById("tablaReuniones").getElementsByTagName('tbody')[0];
+            const fila = tabla.insertRow();
+            const celdaNombre = fila.insertCell(0);
+            const celdaFecha = fila.insertCell(1);
+            const celdaUbicacion = fila.insertCell(2);
+            
+            // Agregar datos a la fila
+            celdaNombre.innerHTML = nombre;
+            celdaFecha.innerHTML = fecha;
+            celdaUbicacion.innerHTML = ubicacion;
+            
+            // Limpiar los campos del formulario
+            document.getElementById("nombre").value = "";
+            document.getElementById("fecha").value = "";
+            document.getElementById("ubicacion").value = "";
+        }
+    </script>
+</body>
+</html>
