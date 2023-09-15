@@ -1,8 +1,8 @@
-package com.example.repos;
+package repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.example.model.Salario;
+import model.Salario;
 
 public interface SalarioCRUDRepository extends CrudRepository<Salario, Integer>{
 

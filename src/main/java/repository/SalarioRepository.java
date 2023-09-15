@@ -1,12 +1,11 @@
-package com.example.repos;
+package repository;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-
-import com.example.model.Salario;
+import model.Salario;
 
 @Repository
 public class SalarioRepository {
