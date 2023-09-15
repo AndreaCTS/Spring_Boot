@@ -4,6 +4,7 @@
  */
 package repository;
 
+import repository.crud.DepartamentoCrudRepository;
 import com.example.demo.Departamento;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
